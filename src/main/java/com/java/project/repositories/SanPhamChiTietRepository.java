@@ -52,6 +52,9 @@ public interface SanPhamChiTietRepository extends JpaRepository<SanPhamChiTiet, 
 
     List<SanPhamChiTiet> findBySanPhamId(Integer sanPhamId);
 
+    @Query("SELECT s FROM SanPhamChiTiet s WHERE s.sanPham.id = :sanPhamId AND  s.trangThai = true")
+    List<SanPhamChiTiet> findByActiveSanPhamId(Integer sanPhamId);
+
     @Query("""
             select new com.java.project.dtos.SanPhamChiTietResponse(
             spct.id,
