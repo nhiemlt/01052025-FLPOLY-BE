@@ -63,9 +63,6 @@ public class SanPhamChiTietController {
     }
 
 
-
-
-
     @GetMapping("/{id}")
     public ResponseEntity<ApiResponse> getSanPhamChiTietById(@PathVariable Integer id) {
         try {
